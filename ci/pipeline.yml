@@ -1,4 +1,18 @@
 ---
+# resources types
+
+resource_types    :
+  - name          : pull-request
+    type          : docker-image
+    source        :
+      repository  : jtarchie/pr
+
+  - name          : slack-notification
+    type          : docker-image
+    source        :
+      repository  : quay.io/hellofresh/slack-notification-resource
+
+# resources
 
 resources:
 - name: concourse-app
@@ -32,4 +46,3 @@ jobs:
 
         inputs:
         - name: concourse-app
-        
